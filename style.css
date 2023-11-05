@@ -56,6 +56,7 @@ p {
 	margin-bottom: 10rem;
 }
 .section-heading::before {
+
 	content: attr(data-outline);
 	position: absolute;
 	left: 2%;
@@ -69,7 +70,7 @@ p {
 
 	color: transparent;
 	/* -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.103); */
-	-webkit-text-stroke: 1.5px #5a24ed2f;
+	-webkit-text-stroke: 1.5px rgba(255, 255, 0, 0.199);
 	z-index: -1;
 }
 .buttons {
@@ -347,6 +348,7 @@ p {
 	text-align: right;
 }
 #hero .right img {
+	box-shadow: 20px 20px 20px #7304e2e8;
 	width: 100%;
 	max-width: 450px;
 	height: 600px;
@@ -404,15 +406,12 @@ p {
 #stats .all-items {
 	display: flex;
 	align-items: stretch;
-	justify-content: center;
+	justify-content: left;
 }
 #stats .all-items .item {
 	padding: 2rem;
 }
-#stats .number {
-	font-family: 'Poppins';
-	font-size: 8rem;
-}
+
 #stats .stats-sub-heading {
 	font-size: 2rem;
 	margin-bottom: 2rem;
@@ -420,14 +419,20 @@ p {
 
 #stats .all-items .item:nth-child(1) {
 	background-color: rgba(255, 0, 238, 0.411);
+	margin-right : 20px;
 }
 #stats .all-items .item:nth-child(2) {
 	background-color: rgba(0, 255, 115, 0.329);
+	margin-right: 20px;
 }
 #stats .all-items .item:nth-child(3) {
 	background-color: #4705fc50;
+	margin-right: 20px;
 }
-@media only screen and (max-width: 768px) {
+#stats .all-items .item:nth-child(4) {
+	background-color: #fc050550;
+}
+@media only screen and (max-width: 800) {
 	#stats .all-items {
 		flex-direction: column;
 	}
@@ -448,14 +453,14 @@ p {
 	text-align: ;
 }
 #about .left .card {
-	box-shadow: 0px 0px 20px #4705fc33;
+	box-shadow: 0px 0px 20px #fefdffd4;
 	padding: 3rem;
-	border-radius: 12px;
+	border-radius: 52px;
 	min-height: 400px;
 }
 #about .left .card .img {
-	width: 70px;
-	height: 70px;
+	width: 100px;
+	height: 100px;
 	margin: 0 auto;
 	border-radius: 50%;
 	overflow: hidden;
@@ -466,7 +471,7 @@ p {
 }
 #about .left .card .card-desc {
 	color: var(--secondary-gray);
-	margin-bottom: 2rem;
+	margin-bottom: 4rem;
 }
 #about .left .card .card-name {
 	font-size: 2rem;
@@ -504,6 +509,114 @@ p {
 #projects {
 	padding: 10rem 0;
 }
+#projects .item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 800px;
+	margin: 0 auto;
+	margin-bottom: 15rem;
+	/* gap: 2rem; */
+}
+#projects .item:nth-of-type(even) {
+	flex-direction: row-reverse;
+}
+#projects .item .left {
+	flex: 1;
+}
+#projects .item .right {
+	margin-left: -150px;
+	flex: 1;
+	background-color: var(--body-bg);
+	padding: 5rem 3rem;
+	border-radius: 12px;
+	box-shadow: 0px 0px 20px #00000028;
+	z-index: 2;
+}
+#projects .item:nth-of-type(even) .right {
+	margin-left: 0;
+}
+#projects .item:nth-of-type(even) .left {
+	margin-left: -150px;
+}
+#projects .item .left .img {
+	height: 500px;
+	overflow: hidden;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0px 0px 30px #fdfcff;
+	position: relative;
+}
+#projects .item .left .img::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background-color: #5a24ed38;
+}
+#projects .item .left .img img {
+	object-fit: cover;
+	transition: 0.3s ease transform;
+}
+#projects .item:hover .left .img img {
+	transform: scale(1.1);
+	z-index: 1;
+}
+#projects .item .right .project-title {
+	font-size: 2.5rem;
+	font-family: 'Montserrat';
+	margin-bottom: 1rem;
+}
+#projects .item .right .project-sub-title {
+	font-size: 1.6rem;
+	margin-bottom: 2rem;
+}
+#projects .item .right .project-desc {
+	color: var(--secondary-gray);
+	margin-bottom: 3rem;
+}
+#projects .item .right .external-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding: calc(0.6em - 4px) calc(1.6em - 4px);
+}
+#projects .item .right .external-link svg {
+	width: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+	#projects .item {
+		flex-direction: column;
+	}
+	#projects .item .left {
+		width: 100%;
+	}
+	#projects .item .right {
+		margin-left: 0;
+		width: 90%;
+		margin-top: -150px;
+	}
+	#projects .item:nth-of-type(even) {
+		flex-direction: column;
+	}
+	#projects .item:nth-of-type(even) .left {
+		margin-left: 0;
+	}
+}
+@media only screen and (max-width: 450px) {
+	#projects .item .right .buttons {
+		flex-direction: column;
+	}
+	#projects .item .right .buttons a {
+		width: 100%;
+		text-align: center;
+	}
+}
+
 
 
 /* Contact Section */
@@ -683,7 +796,12 @@ p {
 }
 
 #footer footer .col-1 .logo img {
-	max-width: 100px;
+	box-shadow: 0px 0px 20px #ffff0095;
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+	border-radius: 50%;
+	overflow: hidden;
 	margin-bottom: 2rem;
 }
 #footer footer .col-1 p {
